@@ -70,17 +70,22 @@ SELECT * FROM musicas;
 -- SELECT * FROM musicas ORDER BY id LIMIT 12 OFFSET 60 
 
 -- 13 - Selecione todos os compositores da tabela musicas de forma que os resultados não sejam repetidos e não esteja nulo.
+-- SELECT DISTINCT compositor FROM musicas WHERE compositor IS NOT NULL AND compositor <> ''
 
 -- 14 - Selecione os compositores e as composições da tabela musicas de forma que os resultados não sejam repetidos.
+-- SELECT DISTINCT compositor, composicao FROM musicas
 
 -- 15 - Selecione todos os campos da tabela musicas e os registros que o nome do compositor comece exatamente com Bra, isso significa que se a primeira letra não form maiúscula está incorreto.
+-- SELECT * FROM musicas WHERE compositor LIKE 'Bra%'
 
 -- 16 - Selecione todos os campos da tabela musicas e os registros que o ritmo possua a última palavra igual a troppo independente do restante do texto que antecede, mas que seja exatamente a última palavra do texto.
+-- SELECT * FROM musicas WHERE ritmo LIKE '% troppo'
 
 -- 17 - Faça uma busca nos registros da tabela musicas e retorne somente os registros que possua em qualquer posição do texto, da composição, a palavra quartet, independente de ser maiúscula ou minúscula.
+-- SELECT * FROM musicas WHERE composicao ILIKE '%quartet%'
 
 -- 18 - Faça uma busca nos registros da tabela musicas e retorne somente os registros que não possua a palavra quintet na coluna composição, independente de ser maiúscula ou minúscula.
-Faça o teste com outros exemplos.
+-- SELECT * FROM musicas WHERE LOWER(composicao) NOT LIKE '%quintet%'
 
 Faça commit do resultado.
 
